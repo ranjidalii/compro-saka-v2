@@ -1,0 +1,447 @@
+/* Sembunyikan elemen di tampilan mobile */
+@media (max-width: 991px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Tampilkan elemen di tampilan desktop */
+@media (min-width: 992px) {
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* OVERLAY BODY */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease;
+  z-index: 999;
+}
+
+/* OVER BODY */
+
+/* Contact Fixed */
+.contact-button {
+  position: fixed;
+  border: none;
+  bottom: 15px;
+  right: 15px;
+  background-color: #dab6d4;
+  color: #602255;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  text-transform: uppercase;
+  transition: all 0.3s ease; /* Animasi untuk transisi */
+}
+
+.contact-button:hover {
+  background-color: white; /* Warna saat hover */
+  transform: scale(1.1); /* Sedikit membesar saat hover */
+  border: 2px solid #bd31a2;
+  color: #bd31a2;
+}
+
+@media (max-width: 768px) {
+  .contact-button {
+    bottom: 10px; /* Jarak dari bawah lebih kecil */
+    right: 10px; /* Jarak dari kanan lebih kecil */
+    font-size: 14px; /* Ukuran teks lebih kecil */
+    padding: 10px 15px; /* Padding lebih kecil */
+  }
+}
+
+.contact-button.small {
+  padding: 0 10px; /* Ubah padding untuk tombol kecil */
+  font-size: 14px; /* Ubah ukuran teks */
+  bottom: 60px;
+  right: 15px;
+  border-radius: 15px;
+  text-align: center; /* Teks tetap rata tengah */
+  line-height: 40px; /* Pastikan teks tetap vertikal rata tengah */
+}
+
+.contact-box {
+  position: fixed;
+  bottom: 110px;
+  right: 20px;
+  /* right: 0; */
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 15px;
+  width: 300px;
+  z-index: 9999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+}
+
+.contact-box .btn-close-info {
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.contact-box.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.contact-content p:first-child {
+  margin-top: 20px;
+}
+/* Baris Kontak */
+.contact-content p {
+  font-size: 20px; /* Sesuaikan ukuran ikon */
+  display: flex; /* Mengaktifkan Flexbox */
+  justify-content: flex-end; /* Isi baris rata kanan */
+  align-items: center; /* Vertikal rata tengah */
+  gap: 8px; /* Jarak antara teks dan ikon */
+  margin: 0; /* Hilangkan margin bawaan */
+  padding: 5px 0;
+  font-weight: 400;
+  color: #602255;
+}
+
+/* Ikon */
+.contact-content i {
+  font-size: 20px;
+  color: #602255;
+}
+
+/* Fullscreen Menu */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* background-color: #ff0000; */
+  /* background-color: rgba(0, 0, 0, 1); */
+  background: url("/assets/img/hero-carousel/SAMPUL-1.webp") no-repeat center
+    center/cover;
+  z-index: 9999;
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  color: #fff;
+  overflow: auto;
+  transition: all 0.3s ease;
+  flex-direction: column;
+  justify-content: center;
+  visibility: visible;
+  opacity: 1;
+}
+
+.fullscreen-menu.active {
+  display: flex;
+}
+
+.fullscreen-menu .row-menu {
+  display: flex;
+  justify-content: flex-end; /* Posisi elemen dalam row ke kanan */
+  width: 80%; /* Pastikan row-menu mencakup seluruh lebar layar */
+  max-width: 1200px; /* Batasi lebar maksimum jika diperlukan */
+  margin: 50px auto 0; /* Jarak atas dan tengahkan secara horizontal */
+  /* padding: 20px; */
+  gap: 20px; /* Jarak antar elemen dalam row */
+}
+
+.fullscreen-menu .menu-full {
+  flex: 1; /* Memberikan porsi elemen sesuai kebutuhan */
+  display: flex;
+  flex-direction: column; /* Atur menu menjadi vertikal */
+  align-items: flex-end; /* Pastikan elemen di dalam menu-full rata kanan */
+  /* padding: 10px; */
+  text-align: right; /* Buat teks dan elemen lain dalam menu rata kanan */
+}
+
+.fullscreen-menu .menu-full ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+}
+
+.fullscreen-menu .menu-full li {
+  padding: 5px;
+  /* border-bottom: 1px solid #9e1655; */
+  cursor: pointer;
+  text-align: end;
+  font-weight: 700;
+}
+
+.fullscreen-menu .menu-full li:hover {
+  color: #490546;
+  font-style: italic;
+}
+
+.fullscreen-menu .menu-full ul li ul li:hover {
+  font-weight: 800;
+  font-style: italic;
+  background-color: rgb(235, 154, 235);
+}
+
+.fullscreen-menu .contact-wrapper {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  padding: 20px;
+  gap: 20px;
+}
+
+.fullscreen-menu .menu-column {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-item {
+  margin-bottom: 10px;
+  /* border-bottom: 1px solid #ddd; */
+  /* padding-bottom: 10px; */
+}
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Jarak antara ikon dan teks */
+}
+
+.info-item i {
+  font-size: 18px;
+  color: white;
+  font-style: italic;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.info-item h2 {
+  font-size: 18px;
+  color: white;
+  font-style: italic;
+  font-weight: 600;
+  margin: 0;
+}
+
+.info-item p {
+  font-size: 14px;
+  color: white;
+  font-style: italic;
+  text-indent: 3em; /* Memberikan indentasi seperti tab */
+  margin-top: -10px;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  /* margin-top: 20px; */
+  gap: 10px;
+}
+
+.social-media p {
+  font-size: 20px;
+  color: white;
+  margin: 0;
+}
+
+.social-media i {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  margin: 0;
+}
+
+.maps {
+  margin-top: auto;
+}
+
+.map-label {
+  font-size: 16px; /* Ukuran teks */
+  font-weight: bold; /* Membuat teks lebih tebal */
+  color: white; /* Warna teks */
+  margin-bottom: 10px; /* Jarak antara teks dan iframe */
+  margin-left: 0;
+}
+
+.maps iframe {
+  width: 500px; /* Ukuran persegi */
+  height: 300px; /* Sama dengan lebar untuk membuat persegi */
+  border: 3px solid #333; /* Bingkai hitam */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 48px;
+  cursor: pointer;
+  color: white;
+}
+
+.close-btn:hover {
+  color: #ff0000;
+}
+
+/* Detail Panel Product Service */
+.service-item .detail-panel {
+  position: fixed; /* Posisi relatif terhadap service-item */
+  top: 0; /* Mulai dari atas */
+  left: 0; /* Mulai dari kiri */
+  width: 300px; /* Lebar sama dengan elemen induk */
+  height: 100vh; /* Tinggi sama dengan elemen induk */
+  /* background: rgba(240, 113, 202, 0.8); */
+  background: linear-gradient(to right, rgb(126, 87, 124), rgb(158, 104, 148));
+  color: white; /* Warna teks */
+  padding: 20px; /* Jarak konten */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+  visibility: hidden; /* Awalnya disembunyikan */
+  opacity: 0; /* Transparansi awal */
+  z-index: 9999;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.service-item .detail-panel .icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.service-item .detail-panel .icon img {
+  width: 80px; /* Sesuaikan ukuran gambar */
+  height: auto;
+  display: block;
+  align-items: center;
+  /* padding-bottom: 10px; */
+  top: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.service-item .detail-panel .icon h2 {
+  margin: 0; /* Hilangkan margin default */
+  font-size: 16px; /* Sesuaikan ukuran teks */
+  text-align: left;
+  display: inline-block;
+  color: #602255;
+}
+
+/* Judul dan Paragraf */
+.service-item .detail-panel h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.service-item .detail-panel p {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  color: #602255;
+}
+
+/* Detail Panel Aktif: Tampil */
+.service-item .detail-panel.active {
+  visibility: visible; /* Tampilkan */
+  opacity: 1; /* Penuh terlihat */
+}
+
+.service-item .detail-panel .btn-link {
+  padding: 5px 15px;
+  border: 2px solid purple;
+  text-decoration: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #9e1655;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.service-item .detail-panel .btn-link a {
+  color: white;
+}
+
+.service-item .detail-panel .btn-link:hover {
+  border: 4px solid purple;
+  color: #9e1655;
+  background-color: white;
+  font-style: italic;
+}
+
+.service-item .detail-panel .btn-link a:hover {
+  color: #9e1655;
+}
+
+.service-item .detail-panel .btn-link:hover a {
+  color: #9e1655;
+}
+
+/* DROPDOWN MENU @ MENU FULLSCREEN */
+.fullscreen-menu .row-menu .menu-full .dropdown ul {
+  margin: 0;
+  padding: 5px 0;
+  background: white;
+  display: block;
+  position: absolute;
+  visibility: hidden;
+  right: 0px;
+  top: 100%;
+  opacity: 0;
+  transition: 0.3s;
+  border-radius: 4px;
+  z-index: 99;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+.fullscreen-menu .row-menu .menu-full .dropdown ul a i {
+  font-size: 10px;
+}
+
+.fullscreen-menu .row-menu .menu-full .dropdown ul a:hover,
+.fullscreen-menu .row-menu .menu-full .dropdown ul .active:hover,
+.fullscreen-menu .row-menu .menu-full .dropdown ul li:hover > a {
+  color: black;
+  font-style: italic;
+  /* color: purple; */
+}
+
+.fullscreen-menu .row-menu .menu-full .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.fullscreen-menu .row-menu .menu-full .dropdown .dropdown ul {
+  top: 0;
+  left: -90%;
+  visibility: hidden;
+}
+
+.fullscreen-menu .row-menu .menu-full .dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: -100%;
+  visibility: visible;
+}
